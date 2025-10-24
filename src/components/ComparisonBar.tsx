@@ -1,20 +1,12 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Product } from "./ProductCard";
-
-interface ComparisonBarProps {
-  selectedProducts: Product[];
-  onRemove: (id: string) => void;
-  onCompare: () => void;
-  onClear: () => void;
-}
 
 export const ComparisonBar = ({
   selectedProducts,
   onRemove,
   onCompare,
   onClear,
-}: ComparisonBarProps) => {
+}) => {
   if (selectedProducts.length === 0) return null;
 
   return (

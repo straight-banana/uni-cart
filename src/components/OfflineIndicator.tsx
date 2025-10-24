@@ -1,11 +1,7 @@
 import { X, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface OfflineIndicatorProps {
-  onDismiss: () => void;
-}
-
-export const OfflineIndicator = ({ onDismiss }: OfflineIndicatorProps) => {
+export const OfflineIndicator = ({ onDismiss }) => {
   return (
     <div className="fixed top-16 left-64 right-0 z-40 animate-fade-in">
       <div className="bg-warning border-b border-warning-foreground/20 px-6 py-3">

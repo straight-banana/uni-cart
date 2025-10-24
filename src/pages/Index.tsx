@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Plus, ShoppingBag } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
-import { ProductCard, Product } from "@/components/ProductCard";
+import { ProductCard } from "@/components/ProductCard";
 import { ComparisonBar } from "@/components/ComparisonBar";
 import { EditProductModal } from "@/components/EditProductModal";
 import { ComparisonModal } from "@/components/ComparisonModal";
@@ -10,7 +10,7 @@ import { OfflineIndicator } from "@/components/OfflineIndicator";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
-const MOCK_PRODUCTS: Product[] = [
+const MOCK_PRODUCTS = [
   {
     id: "1",
     name: "Wireless Bluetooth Headphones with Noise Cancelling",
@@ -65,17 +65,17 @@ const MOCK_PRODUCTS: Product[] = [
 ];
 
 const Index = () => {
-  const [products, setProducts] = useState<Product[]>(MOCK_PRODUCTS);
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [products, setProducts] = useState(MOCK_PRODUCTS);
+  const [selectedProducts, setSelectedProducts] = useState([]);
   const [activeMenuItem, setActiveMenuItem] = useState("dashboard");
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [editingProduct, setEditingProduct] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [showOfflineIndicator, setShowOfflineIndicator] = useState(false);
   const { toast } = useToast();
 
-  const handleToggleSelect = (id: string) => {
+  const handleToggleSelect = (id) => {
     setSelectedProducts((prev) => {
       if (prev.includes(id)) {
         return prev.filter((p) => p !== id);
@@ -92,12 +92,12 @@ const Index = () => {
     });
   };
 
-  const handleEdit = (product: Product) => {
+  const handleEdit = (product) => {
     setEditingProduct(product);
     setIsEditModalOpen(true);
   };
 
-  const handleSaveEdit = (updatedProduct: Product) => {
+  const handleSaveEdit = (updatedProduct) => {
     setProducts((prev) =>
       prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
     );
@@ -107,7 +107,7 @@ const Index = () => {
     });
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id) => {
     setProducts((prev) => prev.filter((p) => p.id !== id));
     setSelectedProducts((prev) => prev.filter((p) => p !== id));
     toast({

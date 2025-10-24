@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -12,22 +10,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Product } from "./ProductCard";
-
-interface EditProductModalProps {
-  product: Product | null;
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (product: Product) => void;
-}
 
 export const EditProductModal = ({
   product,
   isOpen,
   onClose,
   onSave,
-}: EditProductModalProps) => {
-  const [formData, setFormData] = useState<Product | null>(null);
+}) => {
+  const [formData, setFormData] = useState(null);
 
   useEffect(() => {
     if (product) {

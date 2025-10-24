@@ -9,31 +9,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  site: string;
-  image: string;
-  quantity: number;
-  url?: string;
-}
-
-interface ProductCardProps {
-  product: Product;
-  isSelected: boolean;
-  onToggleSelect: (id: string) => void;
-  onEdit: (product: Product) => void;
-  onDelete: (id: string) => void;
-}
-
 export const ProductCard = ({
   product,
   isSelected,
   onToggleSelect,
   onEdit,
   onDelete,
-}: ProductCardProps) => {
+}) => {
   return (
     <div className="group relative bg-card rounded-2xl border-2 border-border hover:border-primary transition-all duration-300 hover:shadow-glow hover:scale-[1.02] overflow-hidden animate-fade-in">
       {/* Image */}

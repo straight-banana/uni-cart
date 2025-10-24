@@ -6,20 +6,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Product } from "./ProductCard";
 import { Badge } from "@/components/ui/badge";
-
-interface ComparisonModalProps {
-  products: Product[];
-  isOpen: boolean;
-  onClose: () => void;
-}
 
 export const ComparisonModal = ({
   products,
   isOpen,
   onClose,
-}: ComparisonModalProps) => {
+}) => {
   const findBestValue = () => {
     if (products.length === 0) return null;
     return products.reduce((best, current) =>

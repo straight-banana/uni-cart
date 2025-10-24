@@ -1,11 +1,6 @@
 import { Home, Heart, GitCompare, Settings, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface SidebarProps {
-  activeItem: string;
-  onItemClick: (item: string) => void;
-}
-
 const menuItems = [
   { id: "dashboard", label: "Dashboard", icon: Home },
   { id: "favorites", label: "Favorites", icon: Heart },
@@ -14,7 +9,7 @@ const menuItems = [
   { id: "help", label: "Help", icon: HelpCircle },
 ];
 
-export const Sidebar = ({ activeItem, onItemClick }: SidebarProps) => {
+export const Sidebar = ({ activeItem, onItemClick }) => {
   return (
     <aside className="fixed left-0 top-16 bottom-0 w-64 gradient-sidebar border-r border-border/50 shadow-lg">
       <nav className="p-4 space-y-2">
