@@ -8,35 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 270 30% 98%;
+    --foreground: 252 28% 22%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 252 28% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 252 28% 22%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 280 64% 78%;
+    --primary-foreground: 252 28% 22%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 265 53% 54%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 270 20% 92%;
+    --muted-foreground: 254 11% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 64% 78%;
+    --accent-foreground: 252 28% 22%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 280 30% 90%;
+    --input: 280 30% 90%;
+    --ring: 280 64% 78%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom lavender gradients */
+    --gradient-primary: linear-gradient(90deg, hsl(280 64% 78%), hsl(265 53% 54%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(280 64% 78%), hsl(280 40% 93%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 64% 78%), hsl(265 53% 54%));
+    
+    /* Success color */
+    --success: 157 58% 75%;
+    --success-foreground: 252 28% 22%;
+    
+    /* Warning color */
+    --warning: 346 100% 93%;
+    --warning-foreground: 0 84% 30%;
+    
+    /* Shadows */
+    --shadow-lavender: 0 4px 20px rgba(201, 167, 235, 0.25);
+    --shadow-glow: 0 0 10px rgba(201, 167, 235, 0.4);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +118,33 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-lavender {
+    box-shadow: var(--shadow-lavender);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
